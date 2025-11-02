@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Pharmacy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background: #f8fcff;
+    }
+
+    /* LEFT SIDE BACKGROUND WITH TEXT */
+    .left-side {
+      flex: 1;
+      background: url('background-pharmacy.jpg') center center / cover no-repeat;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .left-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .left-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 16px;
+      padding: 35px 45px;
+      max-width: 400px;
+      animation: slideFadeIn 1s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-card h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #aef1d9;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .left-card p {
+      font-size: 1.05rem;
+      color: #e0f7ef;
+      line-height: 1.6;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* RIGHT SIDE REGISTER BOX */
+    .register-box {
+      width: 420px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: -3px 0 12px rgba(0, 0, 0, 0.15);
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .register-box h2 {
+      color: #0b8f66;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input-group {
+      position: relative;
+      width: 85%;
+      margin: 8px 0;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 35px 10px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #f5f9ff;
+      font-size: 14px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #0b8f66;
+      box-shadow: 0 0 4px rgba(11, 143, 102, 0.3);
+      outline: none;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #0b8f66;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .input-group i:hover {
+  color: #08704f; /* darker shade kapag hover */
+}
+
+    .register-box button {
+      width: 85%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0b8f66;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .register-box button:hover {
+      background-color: #08704f;
+      transform: scale(1.02);
+    }
+
+    .links {
+      width: 85%;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #0b8f66;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+      color: #08704f;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .left-side {
+        height: 40%;
+      }
+
+      .register-box {
+        width: 100%;
+        height: 60%;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .left-card {
+        padding: 30px;
+      }
+
+      .left-card h1 {
+        font-size: 1.8rem;
+      }
+
+      .left-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- LEFT SIDE -->
+  <div class="left-side">
+    <div class="left-card">
+      <h1>Join Us!</h1>
+      <p>Create your account to access the Pharmacy Management System and manage your records efficiently.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="register-box">
+    <h2>Create Account</h2>
+    <form method="POST" action="register.php">
+      <div class="input-group">
+        <input type="text" name="username" placeholder="Username" required>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <i class="fa-solid fa-eye" id="togglePassword"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" name="confirm_password" placeholder="Confirm Password" id="confirmPassword" required>
+        <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
+      </div>
+      <button type="submit">Register</button>
+
+      <div class="links">
+        <a href="login_page.html">Already have an account? Login</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    togglePassword.addEventListener('click', () => {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+      togglePassword.classList.toggle('fa-eye-slash');
+    });
+
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    toggleConfirmPassword.addEventListener('click', () => {
+      const type = confirmPasswordInput.type === 'password' ? 'text' : 'password';
+      confirmPasswordInput.type = type;
+      toggleConfirmPassword.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+
+</html>
